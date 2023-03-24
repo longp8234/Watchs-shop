@@ -22,7 +22,7 @@ app.use(express.urlencoded({
 app.use(express.json())
 
 //Template engine
-app.engine('hbs', handlebars.engine({
+app.engine('hbs', handlebars({
   extname: '.hbs'
 }));
 app.set('view engine', 'hbs');

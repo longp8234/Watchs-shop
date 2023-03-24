@@ -1,0 +1,130 @@
+[{
+  "_id": {
+    "$oid": "64184a9ea4d48270db856047"
+  },
+  "nameCategory": "Hublot",
+  "description": "Hublot is a Swiss luxury watchmaker founded in 1980 by Italian Carlo Crocco. The company operates as a wholly owned subsidiary of the French luxury conglomerate LVMH. A scion of the Italian Binda Group dynasty, best known for making Breil watches, Carlo Crocco left the company in 1976, to start a watch company. Moving to Switzerland he formed MDM Geneve and set about designing a watch that he named the Hublot after the French.",
+  "image": "https://diamondrooms.com/wp-content/uploads/2020/03/521.NX_.1171.RX-4-1280x1280.jpg",
+  "slug": "brand-hublot",
+  "updatedAt": {
+    "$date": "2023-03-21T10:09:50.944Z"
+  },
+  "deleted": false
+},{
+  "_id": {
+    "$oid": "64184ba0a4d48270db856048"
+  },
+  "nameCategory": "Chopard",
+  "description": "Le Petit-Fils de L.-U. Chopard & Cie S.A., commonly known as Chopard, is a Swiss manufacturer and retailer of luxury watches, jewellery and accessories. Founded in 1860 by Louis-Ulysse Chopard in Sonvilier, Switzerland, Chopard has been owned by the Scheufele family of Germany since 1963.",
+  "image": "https://ae01.alicdn.com/kf/HTB1laFMyrGYBuNjy0Foq6AiBFXax/Skeleton-Tourbillon-Mechanical-Watch-Men-Automatic-Classic-Rose-Gold-Leather-Mechanical-Wrist-Watches-Reloj-Hombre-2018.jpg",
+  "slug": "brand-chopard",
+  "updatedAt": {
+    "$date": "2023-03-21T10:24:32.835Z"
+  },
+  "deleted": false,
+  "deletedAt": {
+    "$date": "2023-03-21T08:59:00.658Z"
+  }
+},{
+  "_id": {
+    "$oid": "6418928e9beedddcb6626d69"
+  },
+  "nameCategory": "Hamilton",
+  "image": "https://www.watchnation.com/wp-content/uploads/2020/05/159955443.jpg",
+  "createdAt": {
+    "$date": "2023-03-20T17:06:22.846Z"
+  },
+  "updatedAt": {
+    "$date": "2023-03-21T10:24:34.659Z"
+  },
+  "slug": "hamilton",
+  "__v": 0,
+  "deleted": false,
+  "deletedAt": {
+    "$date": "2023-03-21T10:10:14.326Z"
+  }
+},{
+  "_id": {
+    "$oid": "641893bc9beedddcb6626d73"
+  },
+  "nameCategory": "Breguet",
+  "image": "https://content.thewosgroup.com/productimage/17110366/17110366_4.jpg?impolicy=zoom",
+  "createdAt": {
+    "$date": "2023-03-20T17:11:24.387Z"
+  },
+  "updatedAt": {
+    "$date": "2023-03-23T17:11:32.227Z"
+  },
+  "slug": "breguet",
+  "__v": 0,
+  "deleted": false,
+  "deletedAt": {
+    "$date": "2023-03-23T17:11:16.239Z"
+  }
+},{
+  "_id": {
+    "$oid": "64196057e488feee0958520e"
+  },
+  "nameCategory": "Rolex",
+  "image": "https://img.auctiva.com/imgdata/1/6/2/9/2/5/4/webimg/988897878_o.jpg",
+  "createdAt": {
+    "$date": "2023-03-21T07:44:23.342Z"
+  },
+  "updatedAt": {
+    "$date": "2023-03-21T11:09:25.827Z"
+  },
+  "slug": "rolex-update",
+  "__v": 0,
+  "deleted": false,
+  "deletedAt": {
+    "$date": "2023-03-21T09:36:05.400Z"
+  }
+},{
+  "_id": {
+    "$oid": "64198dfd2e80481e2a33a084"
+  },
+  "nameCategory": "Breitling",
+  "image": "https://2.bp.blogspot.com/-aS3f3GaEpFM/VlrQclVuCgI/AAAAAAAADTw/c0eZcSQHXq8/s1600/Screenshot_2015-11-29-17-07-19-1.png",
+  "deleted": false,
+  "createdAt": {
+    "$date": "2023-03-21T10:59:09.576Z"
+  },
+  "updatedAt": {
+    "$date": "2023-03-21T10:59:09.576Z"
+  },
+  "slug": "breitling",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64198f1d2e80481e2a33a089"
+  },
+  "nameCategory": "Patek Philippe",
+  "image": "https://cdn.shopify.com/s/files/1/0029/8254/3458/products/IMG_7331_900x.jpg?v=1598854332",
+  "deleted": false,
+  "createdAt": {
+    "$date": "2023-03-21T11:03:57.205Z"
+  },
+  "updatedAt": {
+    "$date": "2023-03-21T11:03:57.205Z"
+  },
+  "slug": "patek-philippe",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6419bb1d9969846650abeb33"
+  },
+  "nameCategory": "Oris",
+  "image": "https://th.bing.com/th/id/R.be8f87a1bb4e89d113b92144292414fc?rik=Ggf%2bHCLcBzS9vg&riu=http%3a%2f%2f2.bp.blogspot.com%2f-eWVbdeUtCg4%2fUd-7RWzIEgI%2fAAAAAAAAkkE%2fZS43OUp90es%2fs1600%2fORIS%2bHirondelle%2bDIVER%2b03.jpg&ehk=pT17pY1K2Q8KJsu1BCEurfbShTPOS2wcFz0JQihOvns%3d&risl=&pid=ImgRaw&r=0",
+  "deleted": false,
+  "createdAt": {
+    "$date": "2023-03-21T14:11:41.554Z"
+  },
+  "updatedAt": {
+    "$date": "2023-03-21T14:53:04.082Z"
+  },
+  "slug": "oris",
+  "__v": 0,
+  "deletedAt": {
+    "$date": "2023-03-21T14:52:59.567Z"
+  }
+}]

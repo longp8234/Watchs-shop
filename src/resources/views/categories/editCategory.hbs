@@ -1,0 +1,16 @@
+<div class="edit-category container pt-5 pb-5">
+    <h3>Update brand</h3>
+    <form method="post" action="/categories/{{category._id}}?_method=PUT">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Name brand</label>
+            <input type="text" name="nameCategory" value="{{category.nameCategory}}" class="form-control" aria-describedby="nameBrand"
+                placeholder="Enter name brand">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Link image</label>
+            <input type="text" name="image" value="{{category.image}}" class="form-control" aria-describedby="imageBrand"
+                placeholder="Enter name brand">
+        </div>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+    </form>
+</div>

@@ -1,0 +1,46 @@
+<div class="create-category container pt-5 pb-5">
+    <h3>Create a new product</h3>
+    <form method="post" action="/products/store">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Name product</label>
+            <input type="text" name="nameProduct" class="form-control" aria-describedby="nameBrand"
+                placeholder="Enter name product">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Description</label>
+            <input type="text" name="description" class="form-control" aria-describedby="description"
+                placeholder="Enter description">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Year</label>
+            <input type="text" name="year" class="form-control" aria-describedby="year"
+                placeholder="Enter year">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Price</label>
+            <input type="text" name="price" class="form-control" aria-describedby="price" placeholder="Enter price">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Link image</label>
+            <input type="text" name="image" class="form-control" aria-describedby="imageproduct"
+                placeholder="Enter link image product">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Choose brand</label>
+            <select class="form-control">
+                {{#each categories}}
+                    <option value="{{this.nameCategory}}">{{this.nameCategory}}</option>
+                {{/each}}
+            </select>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    {{!-- <div class="form-group">
+        <select>
+            {{#each categories}}
+            <option value="{{this.nameCategory}}">{{this.nameCategory}}</option>
+            {{/each}}
+        </select>
+    </div> --}}
+</div>

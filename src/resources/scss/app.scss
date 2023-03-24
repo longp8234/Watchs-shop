@@ -1,0 +1,360 @@
+.header-navbar {
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
+}
+
+.register-bg {
+    background-color: #e4e4e4;
+}
+
+// home layout start
+.content {
+    margin-top: 58px;
+}
+
+.slider {
+    .carousel-control-prev {
+        width: 3%;
+    }
+    .carousel-control-next {
+        width: 3%;
+    }
+}
+
+.popular-branch {
+    margin-top: 100px;
+    margin-bottom: 100px;
+
+    .popular-branch-list {
+        .popular-branch-item {
+            .popular-branch-image {
+                overflow: hidden;
+                cursor: pointer;
+
+                &:hover {
+                    img {
+                        transform: scale(1.04);
+                    }
+                }
+
+                img {
+                    object-fit: cover;
+                    width: 100%;
+                    height: 100%;
+                    transition: all 0.4s ease-in-out;
+                }
+            }
+
+            .category-link-detail {
+                text-decoration: none;
+
+                .popular-branch-name {
+                    color: rgb(43, 43, 43);
+
+                    &:hover {
+                        opacity: 0.9;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.section-gallery {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 30px;
+
+    .gallery-item {
+        overflow: hidden;
+        position: relative;
+
+        &:hover{
+            .gallery-img {
+                position: absolute;
+                transform: scale(1.06);
+                transition: all .4s ease-out 0s;
+                filter: brightness(60%);
+            }
+        }
+    }
+
+    .gallery-item:first-child {
+        grid-column: 1/2;
+        grid-row: 1/3;
+    }
+
+    .gallery-item:nth-child(2) {
+        grid-column: 2/3;
+        grid-row: 1/3;
+    }
+
+    .gallery-item:nth-child(3) {
+        grid-column: 3/4;
+        grid-row: 1/2;
+    }
+
+    .gallery-item:last-child {
+        grid-column: 3/4;
+        grid-row: 2/3;
+    }
+}
+
+.section-products {
+    margin-top: 200px;
+    margin-bottom: 180px;
+
+    .products-list {
+        .products-item {
+            .products-image {
+                position: relative;
+                cursor: pointer;
+
+                img {
+                    border-bottom: 2px solid #f81f1f;
+                }
+
+                .like-icon {
+                    position: absolute;
+                    top: 12px;
+                    right: 20px;
+                    font-size: 26px;
+                    color: #f81f1f;
+                    cursor: pointer;
+                    opacity: 0;
+                    visibility: hidden;
+                }
+
+                .add-to-cart-btn {
+                    position: absolute;
+                    color: #fff;
+                    margin-top: 100%;
+                    margin-left: -100%;
+                    cursor: pointer;
+                    visibility: hidden;
+                    outline: none;
+                }
+            }
+
+            .products-info {
+                margin-top: 16px;
+                cursor: pointer;
+            }
+        }
+
+        .products-item:hover {
+            .like-icon {
+                opacity: 1;
+                visibility: visible;
+                transition: all 0.4s ease 0.1s;
+            }
+
+            .add-to-cart-btn {
+                background-color: #f81f1f;
+                padding: 18px 0;
+                width: 100%;
+                margin-top: 88%;
+                visibility: visible;
+                transition: all 0.4s ease-out 0.1s;
+            }
+        }
+    }
+
+    .view-more-btn {
+        margin-top: 80px;
+        padding: 16px;
+        text-transform: uppercase;
+        background-color: #f81f1f;
+        color: white !important;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .view-more-btn:hover {
+        background-color: #f73232;
+    }
+}
+//home layout end
+
+
+//products layout start
+.product-layout {
+    padding-bottom: 160px;
+
+    .product-layout-conatiner {
+        .product-filter-block {
+            .nav-pills .nav-link.active,
+            .nav-pills .show>.nav-link {
+                color: #000;
+                background-color: #f0f0f0;
+            }
+
+            .nav-link {
+                border-bottom: 1px solid #afafaf;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-radius: 0px;
+                width: 95%;
+
+                p {
+                    margin-bottom: 0 !important;
+                }
+                i {
+                    font-size: small;
+                }
+            }
+        }
+
+        .products-list {
+            .products-list-heading {
+                .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+                    background-color: #fff !important;
+                    border-bottom: 2px solid #f81f1f !important;
+                    border-radius: 0px;
+                }
+
+                .nav-link {
+                    color: #000;
+                }
+            }
+
+            .products-item {
+                .products-image {
+                    position: relative;
+                    cursor: pointer;
+        
+                    img {
+                        border-bottom: 2px solid #f81f1f;
+                    }
+        
+                    .like-icon {
+                        position: absolute;
+                        top: 12px;
+                        right: 20px;
+                        font-size: 26px;
+                        color: #f81f1f;
+                        cursor: pointer;
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+        
+                    .add-to-cart-btn {
+                        position: absolute;
+                        color: #fff;
+                        cursor: pointer;
+                        visibility: hidden;
+                        outline: none;
+                    }
+                }
+        
+                .products-info {
+                    cursor: pointer;
+                }
+            }
+        
+            .products-item:hover {
+                .like-icon {
+                    opacity: 1;
+                    visibility: visible;
+                    transition: all 0.4s ease 0.1s;
+                }
+        
+                .add-to-cart-btn {
+                    width: 100%;
+                    background-color: #f81f1f;
+                    padding: 12px 0;
+                    margin-top: -50px;
+                    visibility: visible;
+                    transition: all 0.3s ease-out 0.1s;
+                }
+            }
+        }
+    }
+}
+
+
+//Admin
+.manage-categories {
+    .manage-categories-heading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .update-category-btn {
+        color: rgb(23, 180, 23);
+        text-decoration: none;
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+
+    .delete-category-btn {
+        color: rgb(247, 96, 96);
+        cursor: pointer;
+        background-color: transparent;
+        outline: none;
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+}
+
+.trash-categories {
+    .manage-categories-heading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .restore-category-btn {
+        color: rgb(23, 180, 23);
+        text-decoration: none;
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+
+    .delete-category-btn {
+        color: rgb(247, 96, 96);
+        cursor: pointer;
+        background-color: transparent;
+        outline: none;
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+}
+
+.manage-products {
+    .manage-categories-heading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .update-category-btn {
+        color: rgb(23, 180, 23);
+        text-decoration: none;
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+
+    .delete-category-btn {
+        color: rgb(247, 96, 96);
+        cursor: pointer;
+        background-color: transparent;
+        outline: none;
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+}

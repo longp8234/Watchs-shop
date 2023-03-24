@@ -1,0 +1,96 @@
+<div class="trash-categories container pt-5 pb-5">
+    <div class="manage-categories-heading  pb-3">
+        <h3>Brands removed</h3>
+        <a href="/admin/manage/categories"><i class="fas fa-chevron-left"></i> List of brands</a>
+    </div>
+    
+    <table class="table table-hover table-striped text-center">
+        <thead class="bg-warning">
+            <tr>
+                <th scope="col">Brands name</th>
+                <th scope="col">Image</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each categories}}
+            <tr>
+                <td>{{this.nameCategory}}</td>
+                <td>
+                    <img src="{{this.image}}" width="100px" height="100px" />
+                </td>
+                <td>
+                    <a href="" class="btn-restore-category" data-id="{{this._id}}">
+                        <i class="fa-solid fa-rotate-left"></i> Restore
+                    </a>
+                    <button class="delete-category-btn ml-4 border-0" data-id="{{this._id}}" data-toggle="modal" data-target="#delete-category">
+                        <i class="fas fa-trash-alt delete-category-icon"></i> Permanently deleted
+                    </button>
+                </td>
+            </tr>
+            {{else}}
+            <tr>
+                <td colspan="3" class="text-center">Empty trash can</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+
+{{!-- Modal confirm delete --}}
+<!-- Modal -->
+<div class="modal fade" id="delete-category" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Warning</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Do you want to permanently delete this brand ?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button id="btn-delete-catagory" type="button" class="btn btn-danger">Permanently deleted</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{!-- form delete, restore category hidden --}}
+<form method="post" name="form-delete-category"></form>
+<form method="post" name="form-restore-category"></form>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var categoryId;
+        var formDeleteCategory = document.forms['form-delete-category']
+        var btnDeleteCategory = document.getElementById('btn-delete-catagory')
+
+        //restore
+        var formrRestoreCategory = document.forms['form-restore-category']
+        var btnRestoreCategory = $('.btn-restore-category')
+
+        $('#delete-category').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            categoryId = button.data('id') // Extract info from data-* attributes
+        })
+
+        btnDeleteCategory.onclick = function () {
+            formDeleteCategory.action = '/categories/' + categoryId + '/permanently-deleted/?_method=DELETE'
+            formDeleteCategory.submit()
+        }
+
+        //restore
+        btnRestoreCategory.click(function(event){
+            event.preventDefault()
+            var restoreCategoryId = $(this).data('id')
+            
+            formrRestoreCategory.action = '/categories/' + restoreCategoryId + '/restore/?_method=PATCH'
+            formrRestoreCategory.submit()
+        })
+    })
+</script>

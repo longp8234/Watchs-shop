@@ -1,0 +1,89 @@
+<div class="manage-products container pt-5 pb-5">
+    <div class="manage-categories-heading  pb-3">
+        <h3>List of products</h3>
+        <div class="manage-categories-right">
+            <a href="/products/create"><i class="fa-solid fa-plus"></i> Add new products</a>
+        </div>
+    </div>
+
+    <table class="table table-hover table-striped text-center">
+        <thead class="bg-warning">
+            <tr>
+                <th scope="col">Products name</th>
+                <th scope="col">Image</th>
+                <th scope="col">Description</th>
+                <th scope="col">Year of manufacture</th>
+                <th scope="col">Price</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each products}}
+            <tr>
+                <td>{{this.nameProduct}}</td>
+                <td>
+                    <img src="{{this.image}}" width="100px" height="100px" />
+                </td>
+                <td>{{this.description}}</td>
+                <td>{{this.year}}</td>
+                <td>{{this.price}}</td>
+                <td class="update-delete-block">
+                    <a href="/products/{{this._id}}/edit" class="update-category-btn">
+                        <i class="fas fa-edit update-category-icon"></i> Update
+                    </a>
+                    <button class="delete-category-btn border-0" data-id="{{this._id}}" data-toggle="modal" data-target="#delete-product">
+                        <i class="fas fa-trash-alt delete-category-icon"></i> Delete
+                    </button>
+                </td>
+            </tr>
+            {{else}}
+            <tr>
+                <td colspan="3" class="text-center">No brands have been added yet</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+
+{{!-- Modal confirm delete --}}
+<!-- Modal -->
+<div class="modal fade" id="delete-product" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Warning</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Do you want to delete this product ?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button id="btn-delete-product" type="button" class="btn btn-danger">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{!-- form delete category hidden --}}
+<form method="post" name="form-delete-product"></form>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var categoryId;
+        var formDeleteProduct = document.forms['form-delete-product']
+
+        $('#delete-product').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            productId = button.data('id') // Extract info from data-* attributes
+        })
+
+        var btnDeleteProduct = document.getElementById('btn-delete-product')
+        btnDeleteProduct.onclick = function () {
+            formDeleteProduct.action = '/products/' + productId + '?_method=DELETE'
+            formDeleteProduct.submit()
+        }
+    })
+</script>

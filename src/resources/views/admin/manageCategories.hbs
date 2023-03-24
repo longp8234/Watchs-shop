@@ -1,0 +1,78 @@
+<div class="manage-categories container pt-5 pb-5">
+    <div class="manage-categories-heading  pb-3">
+        <h3>List of brands</h3>
+        <a href="/admin/trash/categories"><i class="fas fa-trash-restore"></i> Trash ({{deletedCategories}})</a>
+    </div>
+    
+    <table class="table table-hover table-striped text-center">
+        <thead class="bg-warning">
+            <tr>
+                <th scope="col">Brands name</th>
+                <th scope="col">Image</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each categories}}
+            <tr>
+                <td>{{this.nameCategory}}</td>
+                <td>
+                    <img src="{{this.image}}" width="100px" height="100px" />
+                </td>
+                <td>
+                    <a href="/categories/{{this._id}}/edit" class="update-category-btn"><i class="fas fa-edit update-category-icon"></i> Update</a>
+                    <button class="delete-category-btn ml-4 border-0" data-id="{{this._id}}" data-toggle="modal" data-target="#delete-category"><i class="fas fa-trash-alt delete-category-icon"></i> Delete</button>
+                </td>
+            </tr>
+            {{else}}
+            <tr>
+                <td colspan="3" class="text-center">No brands have been added yet</td>
+            </tr>
+            {{/each}}
+        </tbody> 
+    </table>
+</div>
+
+{{!-- Modal confirm delete --}}
+<!-- Modal -->
+<div class="modal fade" id="delete-category" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Warning</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Do you want to move this brand to the trash ?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button id="btn-delete-catagory" type="button" class="btn btn-danger">Move to the trash</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{!-- form delete category hidden --}}
+<form method="post" name="form-delete-category"></form>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+        var categoryId;
+        var formDeleteCategory = document.forms['form-delete-category']
+
+        $('#delete-category').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            categoryId = button.data('id') // Extract info from data-* attributes
+        })
+
+        var btnDeleteCategory = document.getElementById('btn-delete-catagory')
+        btnDeleteCategory.onclick = function(){
+            formDeleteCategory.action = '/categories/' + categoryId + '?_method=DELETE'
+            formDeleteCategory.submit()
+        }
+    })
+</script>
